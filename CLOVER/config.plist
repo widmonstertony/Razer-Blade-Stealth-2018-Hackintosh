@@ -14,6 +14,35 @@
 		<dict>
 			<key>Debug</key>
 			<false/>
+			<key>DropOEM_DSM</key>
+			<dict>
+				<key>ATI</key>
+				<false/>
+				<key>Firewire</key>
+				<false/>
+				<key>HDA</key>
+				<false/>
+				<key>HDMI</key>
+				<true/>
+				<key>IDE</key>
+				<false/>
+				<key>IntelGFX</key>
+				<false/>
+				<key>LAN</key>
+				<false/>
+				<key>LPC</key>
+				<false/>
+				<key>NVidia</key>
+				<false/>
+				<key>SATA</key>
+				<false/>
+				<key>SmBUS</key>
+				<false/>
+				<key>USB</key>
+				<false/>
+				<key>WIFI</key>
+				<false/>
+			</dict>
 			<key>Fixes</key>
 			<dict>
 				<key>AddPNLF</key>
@@ -389,11 +418,13 @@
 				<false/>
 				<key>Find</key>
 				<data>
-				igKEwHRC
+				AIoChMB0
 				</data>
+				<key>MatchOS</key>
+				<string>10.14.4,10.14.5</string>
 				<key>Replace</key>
 				<data>
-				igKEwOtC
+				AIoChMDr
 				</data>
 			</dict>
 		</array>
@@ -459,24 +490,6 @@
 				<key>Replace</key>
 				<data>
 				g+M/0+NBCd8=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>External icons patch</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				RXh0ZXJuYWw=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>AppleAHCIPort</string>
-				<key>Replace</key>
-				<data>
-				SW50ZXJuYWw=
 				</data>
 			</dict>
 		</array>
