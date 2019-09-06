@@ -14,35 +14,6 @@
 		<dict>
 			<key>Debug</key>
 			<false/>
-			<key>DropOEM_DSM</key>
-			<dict>
-				<key>ATI</key>
-				<false/>
-				<key>Firewire</key>
-				<false/>
-				<key>HDA</key>
-				<false/>
-				<key>HDMI</key>
-				<true/>
-				<key>IDE</key>
-				<false/>
-				<key>IntelGFX</key>
-				<false/>
-				<key>LAN</key>
-				<false/>
-				<key>LPC</key>
-				<false/>
-				<key>NVidia</key>
-				<false/>
-				<key>SATA</key>
-				<false/>
-				<key>SmBUS</key>
-				<false/>
-				<key>USB</key>
-				<false/>
-				<key>WIFI</key>
-				<false/>
-			</dict>
 			<key>Fixes</key>
 			<dict>
 				<key>AddPNLF</key>
@@ -52,13 +23,13 @@
 				<key>FixHDA</key>
 				<false/>
 				<key>FixHPET</key>
-				<false/>
+				<true/>
 				<key>FixIPIC</key>
-				<false/>
+				<true/>
 				<key>FixRTC</key>
-				<false/>
+				<true/>
 				<key>FixTMR</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>Name</key>
 			<string>DSDT.aml</string>
@@ -204,6 +175,34 @@
 					SUdQVQ==
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>fix auto wake by setting LIDS to One at the end of RWAK</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					e2AKBGB6YAoCYHBgTElEU4Zc
+					</data>
+					<key>Replace</key>
+					<data>
+					e2AKBGB6YAoCYHABTElEU4Zc
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>attempt to fix GPRW(0x69,0x04) instant wake</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					R1BSVwppCgQ=
+					</data>
+					<key>Replace</key>
+					<data>
+					R1BSVwppCgA=
+					</data>
+				</dict>
 			</array>
 			<key>ReuseFFFF</key>
 			<false/>
@@ -282,6 +281,8 @@
 	</dict>
 	<key>CPU</key>
 	<dict>
+		<key>FrequencyMHz</key>
+		<integer>1800</integer>
 		<key>HWPEnable</key>
 		<true/>
 	</dict>
@@ -322,9 +323,7 @@
 			<key>AddClockID</key>
 			<false/>
 			<key>FixOwnership</key>
-			<false/>
-			<key>Inject</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>UseIntelHDMI</key>
 		<false/>
