@@ -37,51 +37,9 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					T1NJRA==
-					</data>
-					<key>Replace</key>
-					<data>
-					WFNJRA==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change _OSI to XOSI</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					X09TSQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					WE9TSQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change _DSM to XDSM</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					X0RTTQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					WERTTQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change EC0 to EC</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					RUMwXw==
@@ -93,35 +51,49 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change H_EC to EC</string>
+					<string>_BIF to XBIF (in BAT0)</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					SF9FQw==
+					FEwQX0JJRg==
 					</data>
 					<key>Replace</key>
 					<data>
-					RUNfXw==
+					FEwQWEJJRg==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change ECDV to EC</string>
+					<string>_BST to XBST (in BAT0)</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					RUNEVg==
+					FEQKX0JTVA==
 					</data>
 					<key>Replace</key>
 					<data>
-					RUNfXw==
+					FEQKWEJTVA==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change HDAS to HDEF</string>
+					<string>change _OSI to XOSI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X09TSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WE9TSQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>(audio) HDAS-&gt;HDEF (needed for CodecCommander ssdt)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -131,34 +103,6 @@
 					<key>Replace</key>
 					<data>
 					SERFRg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change HECI to IMEI</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					SEVDSQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					SU1FSQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change MEI to IMEI</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					TUVJXw==
-					</data>
-					<key>Replace</key>
-					<data>
-					SU1FSQ==
 					</data>
 				</dict>
 				<dict>
@@ -177,16 +121,16 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>fix auto wake by setting LIDS to One at the end of RWAK</string>
+					<string>fix GPRW(0x6d,0x04) instant wake</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>
-					e2AKBGB6YAoCYHBgTElEU4Zc
+					R1BSVwptCgQ=
 					</data>
 					<key>Replace</key>
 					<data>
-					e2AKBGB6YAoCYHABTElEU4Zc
+					R1BSVwptCgA=
 					</data>
 				</dict>
 				<dict>
@@ -201,6 +145,20 @@
 					<key>Replace</key>
 					<data>
 					R1BSVwppCgA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>fix auto wake by setting LIDS to One at the end of RWAK</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					e2AKBGB6YAoCYHBgTElEU4Zc
+					</data>
+					<key>Replace</key>
+					<data>
+					e2AKBGB6YAoCYHABTElEU4Zc
 					</data>
 				</dict>
 			</array>
@@ -258,7 +216,7 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>dart=0 -xcpm nv_disable=1 -cdfon alcid=3 -disablegfxfirmware lilucpu=9 keepsyms=1</string>
+		<string>dart=0 -xcpm alcid=3 -disablegfxfirmware lilucpu=9 keepsyms=1 -cdfon</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Legacy</key>
@@ -301,6 +259,8 @@
 		<dict>
 			<key>PciRoot(0)/Pci(0x02,0)</key>
 			<dict>
+				<key>enable-hdmi20</key>
+				<integer>1</integer>
 				<key>AAPL,ig-platform-id</key>
 				<data>
 				AAAbWQ==
