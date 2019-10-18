@@ -14,6 +14,35 @@
 		<dict>
 			<key>Debug</key>
 			<false/>
+			<key>DropOEM_DSM</key>
+			<dict>
+				<key>ATI</key>
+				<false/>
+				<key>Firewire</key>
+				<false/>
+				<key>HDA</key>
+				<false/>
+				<key>HDMI</key>
+				<true/>
+				<key>IDE</key>
+				<false/>
+				<key>IntelGFX</key>
+				<false/>
+				<key>LAN</key>
+				<false/>
+				<key>LPC</key>
+				<false/>
+				<key>NVidia</key>
+				<false/>
+				<key>SATA</key>
+				<false/>
+				<key>SmBUS</key>
+				<false/>
+				<key>USB</key>
+				<false/>
+				<key>WIFI</key>
+				<false/>
+			</dict>
 			<key>Fixes</key>
 			<dict>
 				<key>AddPNLF</key>
@@ -23,13 +52,13 @@
 				<key>FixHDA</key>
 				<false/>
 				<key>FixHPET</key>
-				<true/>
+				<false/>
 				<key>FixIPIC</key>
-				<true/>
+				<false/>
 				<key>FixRTC</key>
-				<true/>
+				<false/>
 				<key>FixTMR</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>Name</key>
 			<string>DSDT.aml</string>
@@ -37,51 +66,23 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change EC0 to EC</string>
+					<string>change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
-					RUMwXw==
+					T1NJRA==
 					</data>
 					<key>Replace</key>
 					<data>
-					RUNfXw==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>_BIF to XBIF (in BAT0)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					FEwQX0JJRg==
-					</data>
-					<key>Replace</key>
-					<data>
-					FEwQWEJJRg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>_BST to XBST (in BAT0)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					FEQKX0JTVA==
-					</data>
-					<key>Replace</key>
-					<data>
-					FEQKWEJTVA==
+					WFNJRA==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>change _OSI to XOSI</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					X09TSQ==
@@ -93,7 +94,63 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>(audio) HDAS-&gt;HDEF (needed for CodecCommander ssdt)</string>
+					<string>change _DSM to XDSM</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					X0RTTQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WERTTQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change EC0 to EC</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					RUMwXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change H_EC to EC</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					SF9FQw==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change ECDV to EC</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					RUNEVg==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change HDAS to HDEF</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -103,6 +160,34 @@
 					<key>Replace</key>
 					<data>
 					SERFRg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change HECI to IMEI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SEVDSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					SU1FSQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change MEI to IMEI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					TUVJXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					SU1FSQ==
 					</data>
 				</dict>
 				<dict>
@@ -134,33 +219,33 @@
 					</data>
 				</dict>
 				<dict>
-					<key>Comment</key>
-					<string>attempt to fix GPRW(0x69,0x04) instant wake</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					R1BSVwppCgQ=
-					</data>
-					<key>Replace</key>
-					<data>
-					R1BSVwppCgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>fix auto wake by setting LIDS to One at the end of RWAK</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					e2AKBGB6YAoCYHBgTElEU4Zc
-					</data>
-					<key>Replace</key>
-					<data>
-					e2AKBGB6YAoCYHABTElEU4Zc
-					</data>
-				</dict>
+	<key>Comment</key>
+	<string>attempt to fix GPRW(0x69,0x04) instant wake</string>
+	<key>Disabled</key>
+	<false/>
+	<key>Find</key>
+	<data>
+	R1BSVwppCgQ=
+	</data>
+	<key>Replace</key>
+	<data>
+	R1BSVwppCgA=
+	</data>
+</dict>
+<dict>
+	<key>Comment</key>
+	<string>fix auto wake by setting LIDS to One at the end of RWAK</string>
+	<key>Disabled</key>
+	<false/>
+	<key>Find</key>
+	<data>
+	e2AKBGB6YAoCYHBgTElEU4Zc
+	</data>
+	<key>Replace</key>
+	<data>
+	e2AKBGB6YAoCYHABTElEU4Zc
+	</data>
+</dict>
 			</array>
 			<key>ReuseFFFF</key>
 			<false/>
@@ -239,8 +324,6 @@
 	</dict>
 	<key>CPU</key>
 	<dict>
-		<key>FrequencyMHz</key>
-		<integer>1800</integer>
 		<key>HWPEnable</key>
 		<true/>
 	</dict>
@@ -259,8 +342,6 @@
 		<dict>
 			<key>PciRoot(0)/Pci(0x02,0)</key>
 			<dict>
-				<key>enable-hdmi20</key>
-				<integer>1</integer>
 				<key>AAPL,ig-platform-id</key>
 				<data>
 				AAAbWQ==
@@ -269,6 +350,8 @@
 				<data>
 				FlkAAA==
 				</data>
+				<key>enable-hdmi20</key>
+				<integer>1</integer>
 			</dict>
 			<key>PciRoot(0)/Pci(0x1f,3)</key>
 			<dict>
